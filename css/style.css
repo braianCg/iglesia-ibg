@@ -1,0 +1,48 @@
+/* Estilo para el cuerpo para compensar la barra de navegación fija */
+body {
+    padding-top: 56px; /* Altura de la barra de navegación de Bootstrap */
+}
+
+/* --- Efecto Parallax --- */
+.parallax-section {
+    /* La imagen de fondo. ¡REEMPLÁZALA POR LA TUYA! */
+    background-image: url('../img/background-inicio.jpg');
+
+    /* Altura total de la sección */
+    min-height: 100vh; /* vh = viewport height, ocupa toda la altura de la pantalla */
+
+    /* Propiedades clave para el efecto parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* --- Animación de Fade In (Aparecer suavemente) --- */
+
+/* Estado inicial de los elementos a animar: invisibles y ligeramente desplazados */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px); /* Mover 20px hacia abajo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Estado final cuando el elemento es visible */
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+/* Estilo para el texto del header */
+.fade-in {
+    animation: fadeInAnimation 2s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
